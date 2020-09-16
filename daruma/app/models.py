@@ -37,6 +37,7 @@ class Home(Page):
     intro_content = RichTextField(blank=True, null=True)
     logos_title = models.CharField(max_length=100)
     team_title = models.CharField(max_length=100)
+    team_link_text = models.CharField(max_length=100)
     contact_title = models.CharField(max_length=100)
 
     class Meta:

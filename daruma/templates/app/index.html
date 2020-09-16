@@ -4,9 +4,7 @@
     <div class="fluid-container">
       <div class="hero-text">
         <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
-          {% if home %}
           {{ home.hero_title }}
-          {% endif %}
         </h1>
         <p
           data-aos="fade-up"
@@ -28,21 +26,8 @@
 <section id="intro">
   <div class="flex">
     <div class="fluid-container">
-      <h2>What makes us special?</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
-        fugit placeat ipsa quia delectus dignissimos excepturi suscipit
-        repudiandae ut esse, fugiat nobis. Veritatis, nesciunt nemo?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
-        eius rem dignissimos facilis architecto deleniti odio ea? Minus, error
-        totam?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, et
-        molestiae! Aperiam hic rem in.
-      </p>
+      <h2>{{ home.intro_title }}</h2>
+      {{ home.intro_content|safe }}
     </div>
   </div>
 </section>
@@ -50,7 +35,9 @@
 <section class="image">
   <div class="flex">
     <div class="fluid-container">
-      <h2>Trusted by the best</h2>
+      <h2>
+      {{ home.logos_title }}
+      </h2>
       {% if plogos %}
       <div class="row">
         {% for logo in plogos %}
@@ -70,7 +57,9 @@
 <section id="team" class="white">
   <div class="flex">
     <div class="fluid-container">
-      <h2>Meet our team</h2>
+      <h2>
+        {{ home.team_title }}
+      </h2>
 
       {% if tmembers %}
       <div class="row">
@@ -91,7 +80,7 @@
       <div class="row">{% endif %} {% endfor %}</div>
 
       <div class="animated-link center-content">
-        <a href="{% url 'app:team' %}">See entire team</a>
+        <a href="{% url 'app:team' %}">{{ home.team_link_text }}</a>
       </div>
       {% endif %}
     </div>
@@ -101,7 +90,9 @@
 <section id="contact" class="contact-form">
   <div class="flex">
     <div class="fluid-container">
-      <h2>Get in touch</h2>
+      <h2>
+        {{ home.contact_title }}
+      </h2>
       <div class="form-container">
         <form action="{% url 'app:sent' %}" method="post">
           {% csrf_token %} {{ cform.as_p }}
