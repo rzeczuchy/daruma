@@ -1,0 +1,118 @@
+{% extends 'app/shared.html' %} {% block content %}
+<section class="hero">
+  <div class="flex">
+    <div class="fluid-container">
+      <div class="hero-text">
+        <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
+          {% if home %}
+          {{ home.hero_title }}
+          {% endif %}
+        </h1>
+        <p
+          data-aos="fade-up"
+          data-aos-delay="250"
+          data-aos-duration="1000"
+          data-aos-offset="0"
+        >
+          {{ home.hero_subtitle }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="anchor-link">
+    <a href="#intro"><i class="arrow-down"></i></a>
+  </div>
+</section>
+
+<section id="intro">
+  <div class="flex">
+    <div class="fluid-container">
+      <h2>What makes us special?</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
+        fugit placeat ipsa quia delectus dignissimos excepturi suscipit
+        repudiandae ut esse, fugiat nobis. Veritatis, nesciunt nemo?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
+        eius rem dignissimos facilis architecto deleniti odio ea? Minus, error
+        totam?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, et
+        molestiae! Aperiam hic rem in.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="image">
+  <div class="flex">
+    <div class="fluid-container">
+      <h2>Trusted by the best</h2>
+      {% if plogos %}
+      <div class="row">
+        {% for logo in plogos %}
+        <div class="column-4">
+          <div class="logo">
+            <img src="{{ logo.image.url }}" alt="Logo" />
+          </div>
+        </div>
+        {% if forloop.counter|divisibleby:4 %}
+      </div>
+      <div class="row">{% endif %} {% endfor %}</div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section id="team" class="white">
+  <div class="flex">
+    <div class="fluid-container">
+      <h2>Meet our team</h2>
+
+      {% if tmembers %}
+      <div class="row">
+        {% for person in tmembers %}
+        <div class="column-3">
+          <div class="card">
+            <img src="{{ person.portrait.url }}" alt="Portrait" />
+            <div class="card-content">
+              <h2 class="name">{{ person.name }}</h2>
+              <p class="title">{{ person.title }}</p>
+              <p>{{ person.description }}</p>
+              <p>{{ person.email }}</p>
+            </div>
+          </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+      </div>
+      <div class="row">{% endif %} {% endfor %}</div>
+
+      <div class="animated-link center-content">
+        <a href="{% url 'app:team' %}">See entire team</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-form">
+  <div class="flex">
+    <div class="fluid-container">
+      <h2>Get in touch</h2>
+      <div class="form-container">
+        <form action="{% url 'app:sent' %}" method="post">
+          {% csrf_token %} {{ cform.as_p }}
+          <input class="button" type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="image">
+  <div class="flex-short"></div>
+</section>
+{% endblock %}
