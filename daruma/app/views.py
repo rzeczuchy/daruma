@@ -25,18 +25,21 @@ def index(request):
     return render(request, 'app/index.html', context)
 
 def team(request):
+    team = Team.objects.first()
     company_detail = CompanyDetail.objects.first()
     team_members = TeamMember.objects.all()
 
     context = {
-        'ptitle': 'ABCD | Team',
-        'pdescription': 'Meta desciption for this page',
+        'team': team,
+        'ptitle': team.title,
+        'pdescription': team.meta_description,
         'cdetail': company_detail,
         'tmembers': team_members,
     }
     return render(request, 'app/team.html', context)
 
 def blog(request):
+    blog = Blog.objects.first()
     company_detail = CompanyDetail.objects.first()
     post_list = Post.objects.order_by('-published_time')
     paginator = Paginator(post_list, 5)
@@ -44,8 +47,9 @@ def blog(request):
     page_obj = paginator.get_page(page_number)
 
     context = {
-        'ptitle': 'ABCD | Blog',
-        'pdescription': 'Meta desciption for this page',
+        'blog': blog,
+        'ptitle': blog.title,
+        'pdescription': blog.meta_description,
         'cdetail': company_detail,
         'page_obj': page_obj
     }

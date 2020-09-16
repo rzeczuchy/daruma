@@ -49,6 +49,28 @@ class Home(Page):
     def __str__(self):
         return "Home"
 
+class Team(Page):
+    team_title = models.CharField(max_length=100)
+
+    class Meta:
+        verbose_name_plural = "Team"
+
+    def clean(self):
+        check_single_instance(self)
+
+    def __str__(self):
+        return "Team"
+
+class Blog(Page):
+    class Meta:
+        verbose_name_plural = "Blog"
+
+    def clean(self):
+        check_single_instance(self)
+
+    def __str__(self):
+        return "Blog"
+
 class Inquiry(models.Model):
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
