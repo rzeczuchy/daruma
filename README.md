@@ -46,5 +46,5 @@ https://github.com/django-ckeditor/django-ckeditor
 For storing environment variables, python-dotenv has been used:\
 https://github.com/theskumar/python-dotenv
 
-Placeholder hero photo by verneho on Unsplash:
+Placeholder hero photo by verneho on Unsplash:\
 https://unsplash.com/@verneho
