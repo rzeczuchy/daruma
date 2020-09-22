@@ -67,37 +67,37 @@ class PostDetail(DetailView):
             return context
 
 def privacy(request):
-    company_detail = CompanyDetail.objects.first()
     privacy_policy = PrivacyPolicy.objects.first()
+    company_detail = CompanyDetail.objects.first()
     context = {
-        'ptitle': 'ABCD | Privacy Policy',
-        'pdescription': 'Meta desciption for this page',
+        'ptitle': privacy_policy.title,
+        'pdescription': privacy_policy.meta_description,
         'cdetail': company_detail,
         'pobject': privacy_policy
     }
-    return render(request, 'app/simple.html', context)
+    return render(request, 'app/subpage.html', context)
 
 def terms(request):
-    company_detail = CompanyDetail.objects.first()
     terms_of_service = TermsOfService.objects.first()
+    company_detail = CompanyDetail.objects.first()
     context = {
-        'ptitle': 'ABCD | Terms of Service',
-        'pdescription': 'Meta desciption for this page',
+        'ptitle': terms_of_service.title,
+        'pdescription': terms_of_service.meta_description,
         'cdetail': company_detail,
         'pobject': terms_of_service
     }
-    return render(request, 'app/simple.html', context)
+    return render(request, 'app/subpage.html', context)
 
 def disclaimer(request):
-    company_detail = CompanyDetail.objects.first()
     disclaimer = Disclaimer.objects.first()
+    company_detail = CompanyDetail.objects.first()
     context = {
-        'ptitle': 'ABCD | Disclaimer',
-        'pdescription': 'Meta desciption for this page',
+        'ptitle': disclaimer.title,
+        'pdescription': disclaimer.meta_description,
         'cdetail': company_detail,
         'pobject': disclaimer
     }
-    return render(request, 'app/simple.html', context)
+    return render(request, 'app/subpage.html', context)
 
 def send_inquiry(request):
     company_detail = CompanyDetail.objects.first()

@@ -93,9 +93,7 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-class Subpage(models.Model):
-    title = models.CharField(max_length=50)
-    subtitle = models.CharField(max_length=250)
+class Subpage(Page):
     content = RichTextField(blank=True, null=True)
 
     class Meta:
