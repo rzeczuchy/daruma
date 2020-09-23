@@ -111,8 +111,8 @@ def send_inquiry(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
-            i = Inquiry(name=cd['name'], email=cd['email'], message=cd['message'])
-            i.save()
+            # i = Inquiry(name=cd['name'], email=cd['email'], message=cd['message'])
+            # i.save()
         
     return render(request, 'app/thanks.html', context)
 

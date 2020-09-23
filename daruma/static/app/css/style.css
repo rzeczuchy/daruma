@@ -5,8 +5,8 @@
 
 html,
 body {
-  background-color: #144674;
-  color: #fff;
+  background-color: #005336;
+  color: #FFF;
   font-family: "Roboto", sans-serif;
   font-size: 1.05em;
   scroll-behavior: smooth; }
@@ -22,7 +22,7 @@ header nav {
   width: 100%;
   height: 4em;
   background-color: transparent;
-  color: #fff; }
+  color: #FFF; }
   header nav .fluid-container {
     display: flex;
     display: flex;
@@ -30,11 +30,11 @@ header nav {
     justify-content: space-between;
     padding: 1em; }
     header nav .fluid-container .brand {
-      color: #fff;
+      color: #FFF;
       font-family: "Noto Serif", serif;
       font-size: 1.5rem; }
     header nav .fluid-container a {
-      color: #fff;
+      color: inherit;
       text-decoration: none; }
     header nav .fluid-container .navbar {
       display: flex;
@@ -46,11 +46,11 @@ header nav {
         padding: 0 15px; }
 
 a {
-  color: #fff;
+  color: #FFF;
   text-decoration: none; }
 
 a:hover {
-  color: #237bcb;
+  color: #96B742;
   text-decoration: none; }
 
 input {
@@ -73,7 +73,7 @@ footer {
     border: none;
     width: 5em;
     height: 1px;
-    background-color: #237bcb; }
+    background-color: #96B742; }
   footer ul {
     list-style: none; }
   footer .credit {
@@ -87,11 +87,11 @@ footer {
   color: inherit;
   transition: all 0.3s ease-in-out; }
 .animated-link a:hover, .underline-link a:hover {
-  color: #237bcb; }
+  color: #96B742; }
 
 .underline-link a::before {
   visibility: hidden;
-  background-color: #237bcb;
+  background-color: #96B742;
   content: "";
   position: absolute;
   width: 100%;
@@ -105,7 +105,7 @@ footer {
 .arrow, .arrow-down {
   height: 20px;
   width: 20px;
-  border: solid #fff;
+  border: solid #96B742;
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 3px; }
@@ -114,12 +114,13 @@ footer {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg); }
 
-.background-fixed, .hero, .hero-short, .image {
+.background-image, .primary, .hero, .hero-short {
   width: 100%;
-  background-position: top;
+  background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 97, 65, 0.5)), url("/static/app/images/hero_image.jpg"); }
 
 .card {
   text-align: center; }
@@ -174,12 +175,12 @@ footer {
       max-width: 32em; }
       .contact-form .form-container form .button {
         font-size: inherit;
-        color: #fff;
-        background-color: #237bcb;
+        color: #FFF;
+        background-color: #96B742;
         transition: all 0.3s ease-in-out; }
       .contact-form .form-container form .button:hover {
-        background-color: #fff;
-        color: #144674; }
+        background-color: #FFF;
+        color: #005336; }
       .contact-form .form-container form .message {
         resize: none;
         height: 10em; }
@@ -187,6 +188,9 @@ footer {
 .cryptedmail:after {
   font-weight: bold;
   content: attr(data-prefix) "@" attr(data-domain) "." attr(data-tld); }
+
+.primary {
+  background-image: linear-gradient(rgba(0, 97, 65, 0.95), rgba(0, 97, 65, 0.9)), url("/static/app/images/hero_image.jpg"); }
 
 .flex, .flex-short {
   min-height: 36em;
@@ -207,8 +211,7 @@ footer {
   margin: 0 auto; }
 
 .hero, .hero-short {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("/static/app/images/home_hero_img.jpg");
-  color: #fff;
+  color: #FFF;
   min-height: 100vh;
   position: relative; }
   .hero .flex, .hero-short .flex, .hero .flex-short, .hero-short .flex-short {
@@ -225,13 +228,11 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center; }
+    .hero-text h1 {
+      color: #96B742; }
 
 .hero-short {
   min-height: 50vh; }
-
-.image {
-  background-position: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("/static/app/images/home_hero_img.jpg"); }
 
 .logo {
   height: 10em;
@@ -286,16 +287,16 @@ footer {
     color: #999; }
 
 .white {
-  background-color: #fff;
+  background-color: #FFF;
   color: #333; }
   .white a {
-    color: #144674; }
+    color: #005336; }
   .white a:hover {
-    color: #237bcb; }
+    color: #96B742; }
   .white h1,
   .white h2,
   .white h3 {
-    color: #144674; }
+    color: #005336; }
 
 @media screen and (max-width: 700px) {
   .column, .column-2, .column-3, .column-4 {

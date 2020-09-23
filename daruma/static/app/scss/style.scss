@@ -1,10 +1,10 @@
 $font-sans: "Roboto", sans-serif;
 $font-serif: "Noto Serif", serif;
-$light: #fff;
+$light: #FFF;
 $dark: #333;
 $muted: #999;
-$primary: #144674;
-$highlight: lighten($primary, 20);
+$primary: #005336;
+$highlight: #96B742;
 $font-size: 1.05em;
 $nav-height: 4em;
 $hover-color: $highlight;
@@ -55,7 +55,7 @@ header {
       }
 
       a {
-        color: $light;
+        color: inherit;
         text-decoration: none;
       }
 
@@ -166,7 +166,7 @@ footer {
   $thickness: 2px;
   height: $size;
   width: $size;
-  border: solid $light;
+  border: solid $highlight;
   border-width: 0 $thickness $thickness 0;
   display: inline-block;
   padding: 3px;
@@ -178,12 +178,14 @@ footer {
   -webkit-transform: rotate(45deg);
 }
 
-.background-fixed {
+.background-image {
   width: 100%;
-  background-position: top;
+  background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 97, 65, 0.5)),
+  url("/static/app/images/hero_image.jpg");
 }
 
 .card {
@@ -289,6 +291,12 @@ footer {
   content: attr(data-prefix) "@" attr(data-domain) "." attr(data-tld);
 }
 
+.primary {
+  @extend .background-image;
+  background-image: linear-gradient(rgba(0, 97, 65, 0.95), rgba(0, 97, 65, 0.9)),
+    url("/static/app/images/hero_image.jpg");
+}
+
 .flex {
   min-height: 36em;
   display: flex;
@@ -312,9 +320,7 @@ footer {
 }
 
 .hero {
-  @extend .background-fixed;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
-    url("/static/app/images/home_hero_img.jpg");
+  @extend .background-image;
   color: $light;
   min-height: 100vh;
   position: relative;
@@ -332,6 +338,10 @@ footer {
   }
 
   &-text {
+    h1 {
+      color: $highlight;
+    }
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -343,13 +353,6 @@ footer {
 .hero-short {
   @extend .hero;
   min-height: 50vh;
-}
-
-.image {
-  @extend .background-fixed;
-  background-position: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
-    url("/static/app/images/home_hero_img.jpg");
 }
 
 .logo {
