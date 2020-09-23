@@ -120,7 +120,7 @@ footer {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 97, 65, 0.5)), url("/static/app/images/hero_image.jpg"); }
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 97, 65, 0.5)), url("/static/app/images/background.jpg"); }
 
 .card {
   text-align: center; }
@@ -190,7 +190,7 @@ footer {
   content: attr(data-prefix) "@" attr(data-domain) "." attr(data-tld); }
 
 .primary {
-  background-image: linear-gradient(rgba(0, 97, 65, 0.95), rgba(0, 97, 65, 0.9)), url("/static/app/images/hero_image.jpg"); }
+  background-image: linear-gradient(rgba(0, 97, 65, 0.95), rgba(0, 97, 65, 0.9)), url("/static/app/images/background.jpg"); }
 
 .flex, .flex-short {
   min-height: 36em;
