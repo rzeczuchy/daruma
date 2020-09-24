@@ -62,7 +62,7 @@ class PostDetail(DetailView):
     def get_context_data(self, **kwargs):
             context = super().get_context_data(**kwargs)
             context['cdetail'] = CompanyDetail.objects.first()
-            context['ptitle'] = 'ABCD | Blog'
+            context['ptitle'] = 'Blog | Kaktusy'
             context['pdescription'] = 'Meta description for this page'
             return context
 
