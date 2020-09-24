@@ -36,15 +36,4 @@ To access the admin area, create the superuser with:
 python manage.py createsuperuser
 ```
 
-## Notices
-This app makes use of the Django framework for Python:\
-https://github.com/django/django
-
-For rich-text editing, the Django CKEditor integration has been used:\
-https://github.com/django-ckeditor/django-ckeditor
-
-For storing environment variables, python-dotenv has been used:\
-https://github.com/theskumar/python-dotenv
-
-For the cookie pop-up, the Cookie Consent plugin has been used:\
-https://github.com/osano/cookieconsent
+All settings are configured for development environment.
