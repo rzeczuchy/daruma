@@ -48,3 +48,7 @@ See license text at https://github.com/django-ckeditor/django-ckeditor/blob/mast
 For storing environment variables, python-dotenv has been used:\
 https://github.com/theskumar/python-dotenv \
 See license text at https://github.com/theskumar/python-dotenv/blob/master/LICENSE
+
+For the cookie pop-up, the Cookie Consent plugin has been used:\
+https://github.com/osano/cookieconsent \
+See license text at https://github.com/osano/cookieconsent/blob/dev/LICENSE
