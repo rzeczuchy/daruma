@@ -102,7 +102,7 @@ def disclaimer(request):
 def send_inquiry(request):
     company_detail = CompanyDetail.objects.first()
     context = {
-        'ptitle': 'ABCD | Inquiry sent',
+        'ptitle': 'Inquiry sent | Kaktusy',
         'pdescription': 'Meta desciption for this page',
         'cdetail': company_detail,
     }
@@ -119,7 +119,7 @@ def send_inquiry(request):
 def handler404(request, exception):
     company_detail = CompanyDetail.objects.first()
     context = {
-        'ptitle': 'ABCD | Page not found',
+        'ptitle': 'Page not found | Kaktusy',
         'pdescription': 'Meta desciption for this page',
         'cdetail': company_detail,
     }

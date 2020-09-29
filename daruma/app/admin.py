@@ -2,8 +2,8 @@ from django.contrib import admin
 from .models import *
 
 # Edit admin header and title.
-admin.site.site_header = "ABCD admin"
-admin.site.site_title = "ABCD admin"
+admin.site.site_header = "Kaktusy admin"
+admin.site.site_title = "Kaktusy admin"
 
 class PageAdmin(admin.ModelAdmin):
     def has_add_permission(self, request):
