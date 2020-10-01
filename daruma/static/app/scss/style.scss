@@ -32,48 +32,56 @@ h3 {
   font-family: $font-serif;
 }
 
-header {
-  nav {
-    position: absolute;
-    z-index: 10;
-    width: 100%;
-    height: $nav-height;
-    background-color: transparent;
+.responsive-nav {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: $nav-height;
+  background-color: transparent;
+  color: $light;
+
+  a {
     color: $light;
+    text-decoration: none;
+  }
 
-    .fluid-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1em;
+  a:hover {
+    color: $primary;
+    text-decoration: none;
+  }
+
+  .brand {
+    color: inherit;
+    font-size: 1.4em;
+    font-family: $font-serif;
+    z-index: 2;
+  }
+
+  .brand:hover {
+    color: inherit;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 1em;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+
+    &-item {
+      padding: 0 1em;
     }
+  }
 
-    .brand {
-      color: inherit;
-      font-family: $font-serif;
-      font-size: 1.5rem;
-      z-index: 10;
-
-      a:hover {
-        color: inherit;
-      }
-    }
-
-    .navbar-toggle {
-      display: none;
-    }
-
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      list-style-type: none;
-      background-color: transparent;
-
-      li {
-        padding: 0 15px;
-      }
-    }
+  .navbar-toggle {
+    display: none;
   }
 }
 
@@ -452,79 +460,74 @@ footer {
 }
 
 @media screen and (max-width: 700px) {
-  header {
-    nav {
-      .navbar {
-        background-color: $primary;
+  .responsive-nav {
+    .navbar {
+      background-color: $primary;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 15em;
+      padding-top: $nav-height;
+      padding-bottom: 1em;
+      flex-direction: column;
+      transform: scale(1, 0);
+      transform-origin: top;
+      transition: transform 0.5s ease-in-out;
+
+      &-item {
+        margin: 1em;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+        transition-delay: 0ms;
+      }
+    }
+
+    .hamburger {
+      $line-spacing: 0.5em;
+      $icon-width: 2em;
+      $line-thickness: 2px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-right: 1em;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      z-index: 2;
+
+      .line {
+        content: "";
+        display: block;
+        background-color: $light;
+        width: $icon-width;
+        height: $line-thickness;
+      }
+
+      &-icon {
+        @extend .line;
+        position: relative;
+      }
+
+      &-icon::before {
+        @extend .line;
         position: absolute;
-        padding-top: $nav-height;
-        padding-bottom: 1em;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 15em;
-        flex-direction: column;
-        transform-origin: top;
-        transform: scale(1, 0);
-        transition: transform 0.4s ease-in-out;
-
-        li {
-          margin: 1em;
-          opacity: 0;
-          transition: opacity 0.2s ease-in-out;
-          transition-delay: 0ms;
-        }
+        bottom: $line-spacing;
       }
 
-      .navbar-toggle {
-        display: none;
-      }
-
-      .hamburger {
-        $line-spacing: 0.5em;
-        $line-width: 2em;
-        $line-thickness: 2px;
+      &-icon::after {
+        @extend .line;
         position: absolute;
-        top: 0;
-        right: 0;
-        margin-right: 1em;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        z-index: 10;
-
-        span,
-        span::before,
-        span::after {
-          display: block;
-          background-color: $light;
-          width: $line-width;
-          height: $line-thickness;
-          position: relative;
-        }
-
-        span::before,
-        span::after {
-          content: "";
-          position: absolute;
-        }
-
-        span::before {
-          bottom: $line-spacing;
-        }
-
-        span::after {
-          top: $line-spacing;
-        }
+        top: $line-spacing;
       }
+    }
 
-      .navbar-toggle:checked ~ .navbar {
-        transform: scale(1, 1);
+    .navbar-toggle:checked ~ .navbar {
+      transform: scale(1, 1);
 
-        li {
-          opacity: 1;
-          transition-delay: 0.2s;
-        }
+      .navbar-item {
+        opacity: 1;
+        transition-delay: 0.2s;
       }
     }
   }

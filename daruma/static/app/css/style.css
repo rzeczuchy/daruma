@@ -16,35 +16,41 @@ h2,
 h3 {
   font-family: "Noto Serif", serif; }
 
-header nav {
+.responsive-nav {
   position: absolute;
-  z-index: 10;
+  z-index: 1;
   width: 100%;
   height: 4em;
   background-color: transparent;
   color: #fff; }
-  header nav .fluid-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1em; }
-  header nav .brand {
+  .responsive-nav a {
+    color: #fff;
+    text-decoration: none; }
+  .responsive-nav a:hover {
+    color: #005336;
+    text-decoration: none; }
+  .responsive-nav .brand {
     color: inherit;
+    font-size: 1.4em;
     font-family: "Noto Serif", serif;
-    font-size: 1.5rem;
-    z-index: 10; }
-    header nav .brand a:hover {
-      color: inherit; }
-  header nav .navbar-toggle {
-    display: none; }
-  header nav .navbar {
+    z-index: 2; }
+  .responsive-nav .brand:hover {
+    color: inherit; }
+  .responsive-nav .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    list-style-type: none;
-    background-color: transparent; }
-    header nav .navbar li {
-      padding: 0 15px; }
+    height: 100%;
+    padding: 1em; }
+  .responsive-nav .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none; }
+    .responsive-nav .navbar-item {
+      padding: 0 1em; }
+  .responsive-nav .navbar-toggle {
+    display: none; }
 
 a {
   color: #fff;
@@ -300,27 +306,25 @@ footer {
     color: #005336; }
 
 @media screen and (max-width: 700px) {
-  header nav .navbar {
+  .responsive-nav .navbar {
     background-color: #005336;
     position: absolute;
-    padding-top: 4em;
-    padding-bottom: 1em;
     top: 0px;
     left: 0px;
     width: 100%;
     height: 15em;
+    padding-top: 4em;
+    padding-bottom: 1em;
     flex-direction: column;
-    transform-origin: top;
     transform: scale(1, 0);
-    transition: transform 0.4s ease-in-out; }
-    header nav .navbar li {
+    transform-origin: top;
+    transition: transform 0.5s ease-in-out; }
+    .responsive-nav .navbar-item {
       margin: 1em;
       opacity: 0;
       transition: opacity 0.2s ease-in-out;
       transition-delay: 0ms; }
-  header nav .navbar-toggle {
-    display: none; }
-  header nav .hamburger {
+  .responsive-nav .hamburger {
     position: absolute;
     top: 0;
     right: 0;
@@ -328,26 +332,24 @@ footer {
     height: 100%;
     display: flex;
     align-items: center;
-    z-index: 10; }
-    header nav .hamburger span,
-    header nav .hamburger span::before,
-    header nav .hamburger span::after {
+    z-index: 2; }
+    .responsive-nav .hamburger .line, .responsive-nav .hamburger .hamburger-icon, .responsive-nav .hamburger .hamburger-icon::before, .responsive-nav .hamburger .hamburger-icon::after {
+      content: "";
       display: block;
       background-color: #fff;
       width: 2em;
-      height: 2px;
+      height: 2px; }
+    .responsive-nav .hamburger-icon {
       position: relative; }
-    header nav .hamburger span::before,
-    header nav .hamburger span::after {
-      content: "";
-      position: absolute; }
-    header nav .hamburger span::before {
+    .responsive-nav .hamburger-icon::before {
+      position: absolute;
       bottom: 0.5em; }
-    header nav .hamburger span::after {
+    .responsive-nav .hamburger-icon::after {
+      position: absolute;
       top: 0.5em; }
-  header nav .navbar-toggle:checked ~ .navbar {
+  .responsive-nav .navbar-toggle:checked ~ .navbar {
     transform: scale(1, 1); }
-    header nav .navbar-toggle:checked ~ .navbar li {
+    .responsive-nav .navbar-toggle:checked ~ .navbar .navbar-item {
       opacity: 1;
       transition-delay: 0.2s; }
 

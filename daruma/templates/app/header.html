@@ -1,14 +1,14 @@
-<nav>
-  <div class="fluid-container">
-      <div class="brand"><a href="{% url 'app:index' %}">{{ cdetail.name }}</a></div>
+<nav class="responsive-nav">
+  <div class="container">
+      <a href="{% url 'app:index' %}" class="brand">{{ cdetail.name }}</a>
       <input type="checkbox" class="navbar-toggle" id="navbar-toggle">
       <label for="navbar-toggle" class="hamburger">
-        <span></span>
+        <span class="hamburger-icon"></span>
       </label>
       <ul class="navbar">
-        <li class="underline-link"><a href="{% url 'app:team' %}">Team</a></li>
-        <li class="underline-link"><a href="{% url 'app:blog' %}">Blog</a></li>
-        <li class="underline-link"><a href="{% url 'app:index' %}#contact">Contact</a></li>
+        <li class="navbar-item underline-link"><a href="{% url 'app:team' %}">Team</a></li>
+        <li class="navbar-item underline-link"><a href="{% url 'app:blog' %}">Blog</a></li>
+        <li class="navbar-item underline-link"><a href="{% url 'app:index' %}#contact">Contact</a></li>
       </ul>
   </div>
 </nav>
